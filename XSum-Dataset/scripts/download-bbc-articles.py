@@ -20,7 +20,6 @@ import argparse
 from collections import namedtuple
 import hashlib
 from itertools import chain
-from itertools import izip
 from itertools import repeat
 import math
 from multiprocessing.pool import Pool
@@ -192,7 +191,7 @@ def DownloadMode(urls_file, missing_urls_file, downloads_dir, request_parallelis
 
     p = ThreadPool(request_parallelism)
     
-    results = p.imap_unordered(DownloadMapper, izip(urls_left_todownload, repeat(downloads_dir), repeat(timestamp_exactness)))
+    results = p.imap_unordered(DownloadMapper, zip(urls_left_todownload, repeat(downloads_dir), repeat(timestamp_exactness)))
     
     progress_bar = ProgressBar(len(urls_left_todownload))
 
