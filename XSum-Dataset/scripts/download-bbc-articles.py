@@ -53,7 +53,7 @@ class ProgressBar(object):
     self.PrintProgress(self.curr)
 
     if self.curr == self.total:
-      print ''
+      print('')
 
   def PrintProgress(self, value):
     self.stream.write('\b' * self.last_len)
