@@ -208,7 +208,7 @@ def DownloadMode(urls_file, missing_urls_file, downloads_dir, request_parallelis
       print('Interrupted by user')
       break
     except TypeError:
-      print 'TypeError (probably a robot.txt case): '+url
+      print('TypeError (probably a robot.txt case): '+url)
       missing_urls.append(url)
       p.terminate()
     # except IOError:
@@ -217,7 +217,7 @@ def DownloadMode(urls_file, missing_urls_file, downloads_dir, request_parallelis
     #  p.terminate()
 
     # Reset the urls_left_todownload for the rest of not-tried urls
-    print 'Reset urls_left_todownload - (collected_urls, missing_urls)'
+    print('Reset urls_left_todownload - (collected_urls, missing_urls)')
     urls_toignore = collected_urls[:] +  missing_urls[:]
     urls_left_todownload = list(set(urls_left_todownload) - set(urls_toignore))
     print('urls left to download: ' +  str(len(urls_left_todownload)))
